@@ -1,0 +1,94 @@
+.hljs {
+    display: block;
+    padding: 1.3em 1.7em 1.5em;
+    overflow-x: auto;
+    background: #2c2d3a;
+    color: #f3f3f3;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+    font-size: 0.85em;
+    line-height: 1.6;
+    border-radius: 11px;
+    white-space: pre-wrap;
+}
+/* .is-code-row-number-enable pre {
+    padding: 0.11em 1.3em 0.13em 3.7em;
+    border: solid 2.9px #efefef;
+}
+.is-code-row-number-enable pre::before {
+    padding: 0.13em 0 0.45em 0;
+    color: #cbc2ba;
+} */
+.hljs-subst {
+    color: #f3f3f3;
+}
+.hljs-emphasis {
+    font-style: italic;
+}
+.hljs-strong {
+    font-weight: bold;
+}
+.hljs-builtin-name,
+.hljs-type {
+    /* color: #f3f3f3; */
+}
+.hljs-params {
+    color: #fd971f;
+}
+.hljs-literal {
+    color: #f96b6b;
+}
+.hljs-number {
+    color: #ae81ff;
+}
+.hljs-comment {
+    color: #7f888d;
+}
+.hljs-selector-id,
+.hljs-quote {
+    /* color: #00ffff; */
+}
+.hljs-selector-class,
+.hljs-selector-pseudo,
+.hljs-template-variable,
+.hljs-variable,
+.hljs-title,
+.hljs-attr {
+    color: #a6e22e;
+}
+.hljs-keyword,
+.hljs-symbol {
+    color: #66d9ef;
+}
+.hljs-string,
+.hljs-bullet {
+    color: #f0e57f;
+}
+.hljs-section {
+    /* color: #000fff; */
+}
+.hljs-tag {
+    color: #f3f3f3;
+}
+.hljs-attribute {
+    color: #66d9ef;
+}
+.hljs-regexp,
+.hljs-link {
+    color: #e876e8;
+}
+.hljs-built_in {
+    color: #66d9ef;
+}
+.hljs-meta,
+.hljs-selector-tag,
+.hljs-name {
+    color: #f96b6b;
+}
+.hljs::-webkit-scrollbar {
+    height: 9px;
+}
+.hljs::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+

@@ -1,0 +1,75 @@
+.admin-panel {
+    color: #ffffff;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 16px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    transition: 0.3s;
+    z-index: 9999;
+}
+.admin-panel a {
+    color: #ffffff;
+}
+.admin-pv,
+.admin-edit,
+.admin-amp,
+.admin-checks,
+.admin-cresponsive {
+    border-radius: 3px;
+    padding: 0 10px;
+    border: 1px solid #cccccc;
+    margin: 6px 4px;
+}
+.admin-pv > span,
+.admin-edit > span,
+.admin-amp > span,
+.admin-checks > span,
+.admin-cresponsive > span {
+    padding: 0 4px;
+}
+.admin-amp a,
+.admin-checks a,
+.admin-cresponsive a {
+    margin: 0 4px;
+    font-size: 0.8em;
+}
+.admin-pv {
+    position: relative;
+}
+.admin-pv .admin-pv-by {
+    position: absolute;
+    bottom: -1em;
+    right: 0.4em;
+    font-size: 0.6em;
+    background-color: #333333;
+    padding: 0 5px;
+}
+#admin-panel {
+    bottom: 27px;
+    background: none;
+}
+.admin-pv {
+    position: absolute;
+    display: inline;
+    bottom: 0.2em;
+    background: #b4b4b4;
+}
+.admin-pv-by,
+.today-pv,
+.week-pv,
+.all-pv {
+    display: none;
+}
+.admin-edit {
+    position: absolute;
+    display: inline;
+    bottom: 2.5em;
+    background: #b4b4b4;
+}
+
+

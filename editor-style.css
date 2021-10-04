@@ -1,0 +1,130 @@
+body {
+    color: #222222 !important;
+    background: #fffcf9 !important;
+    width: 785px !important;
+    margin: 0 auto 0 175px !important;
+    border: none!important;
+}
+body#tinymce {
+    padding:0!important;
+}
+* {
+    font-family: "Noto Sans JP", sans-serif;
+}
+strong {
+    color: #4e4e4e;
+}
+.main {
+    box-shadow: none;
+}
+p {
+    line-height: 1.8 !important;
+    margin-top: 2.3em;
+    margin-bottom: 2.3em;
+}
+#tinymce > * {
+    margin: 2.3em auto;
+}
+.mce-item-table, .mce-item-table td, .mce-item-table th, .mce-item-table caption {
+    border: 1px dashed #dbd2cc;
+}
+.waku-common p {
+    margin: 1.2em 0;
+}
+.article h2, .article h3, .article h4, .article h5, .article h6 {
+    margin: 2.6em 0 1.3em !important;
+}
+.marker-yellow {
+    background: linear-gradient(transparent 50%, #fffbb2 50%);
+}
+.marker-red {
+    background: linear-gradient(transparent 50%, #ffe3e3 50%);
+}
+.marker-blue {
+    background: linear-gradient(transparent 50%, #e4eeff 50%);
+}
+.marker-purple {
+    background: linear-gradient(transparent 50%, #f5e8ff 50%);
+}
+.ugoku-marker-yellow {
+    background: linear-gradient(transparent 50%, #fffbb2 50%);
+}
+.strong-red-marker-yellow {
+    color: #ff3b3b;
+    background: linear-gradient(transparent 50%, #fffbb2 50%);
+}
+.wp-caption {
+    border: none;
+    background-color: transparent;
+}
+.wp-caption-text {
+    margin: auto 4.3em !important;
+}
+.wp-caption-dd {
+    margin-top: 23px !important;
+}
+img {
+    border: solid 2.7px #dfd1c6;
+    border-radius: 7px;
+}
+.wp-caption img {
+    border: solid 2.7px #dfd1c6;
+}
+.aligncenter {
+    margin: 0 auto !important;
+}
+.video-container {
+    margin: 0 auto;
+}
+.entry-content iframe {
+    margin: 0;
+}
+.article dd {
+    margin-top: 30px;
+}
+.main {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+.article dd {
+    margin-left: initial;
+}
+blockquote {
+    border: none;
+    background-color: transparent;
+    color: #6d6d6d;
+    border-left: 5px solid #c1bdb8;
+    margin: 2.7em auto;
+    padding: 0.1em 0 0.5em 1.5em;
+    font-style: italic;
+}
+blockquote strong {
+    color: #5f5f5f;
+}
+blockquote:before {
+    display: none;
+}
+blockquote::after {
+    display: none;
+}
+blockquote p {
+    margin: 1.2em auto !important;
+}
+.display-none {
+    display: block;
+}
+.display-none-related-post {
+    display: block;
+}
+.micro-bottom {
+    margin-top: -2.9em !important;
+    margin-bottom: 1em !important;
+}
+.mce-content-body code {
+    margin: auto 0.37em;
+    padding: 0.2em 0.47em;
+    border-radius: 5px;
+    color: #626262;
+    background: #f9f9f9;
+}
+
+
