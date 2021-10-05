@@ -419,7 +419,7 @@ img {
     cursor: pointer;
 }
 .sns-share-buttons a {
-    margin-bottom: -5px;  /* override */
+    margin-bottom: -5px;  /* 変えた */
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1776,7 +1776,7 @@ pre {
 }
 
 
-.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
+.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
 
 
 @font-face {
@@ -2602,28 +2602,11 @@ a:hover {
     height: 64.26px !important;
     background-color: transparent;
     border-radius: 50% !important;
-    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.17); */
     transition: 0.47s all cubic-bezier(0.24, 0.35, 0.57, 0.89);
 }
 .sns-buttons a:hover {
-    transform: scale(0.955555);
+    transform: translateY(-2px);
     transition: 0.11s all cubic-bezier(0.41, 0.15, 0.58, 1);
-    color: #ffffff;
-}
-.facebook-button {
-    /* background-color: #7185b0 !important; */
-}
-.twitter-button {
-    /* background-color: #8cbadb !important; */
-}
-.hatebu-button {
-    /* background-color: #72bbe5 !important; */
-}
-.feedly-button {
-    /* background-color: #9fcc95 !important; */
-}
-.pocket-button {
-    /* background-color: #e88992 !important; */
 }
 .like-button {
     display: inline-flex;
@@ -2636,7 +2619,6 @@ a:hover {
     border-radius: 50%;
     border: none;
     background-color: transparent;
-    /* box-shadow: 1px 1px 3px rgb(0 0 0 / 17%); */
     transition: 0.13s all cubic-bezier(.24,.35,.57,.89);
     text-decoration: none;
     cursor: pointer;
@@ -3448,7 +3430,7 @@ td .micro-bottom {
     margin-top: -1.9em;
     margin-bottom: 1.1em;
 }
-/* 以下クチコミ引用用ブロック。Diverからの丸コピで、class名もdiverとかだけ抜いてる */
+/* 以下クチコミ引用用ブロック。Diverからの丸コピ、class名もdiverとかだけ抜いてる */
 .voice_wrap.cf {
     position: relative;
 }
@@ -3651,7 +3633,6 @@ input.search-edit {
     margin-top: 5em;
 }
 .footer-cta {
-    /* background-color: #fcf7f1; */
     border-radius: 8px;
     padding: 1em 1.5em 1em;
     box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.11);
@@ -3730,7 +3711,7 @@ textarea::-webkit-scrollbar-track {
 
 
 
-.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
+.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
 
 
 /*1155px以下　Newトップページ用（なぜかプラス32px。謎。）*/
@@ -3890,7 +3871,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 
-.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
+.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
 
 
 /*768px以下*/
@@ -3968,11 +3949,10 @@ textarea::-webkit-scrollbar-track {
         line-height: 1.2;
     }
     .snsbadge {
-        font-size: 0.95em;
         letter-spacing: -0.3px;
     }
     .sns-buttons-wrap {
-        margin-right: 0.67em;
+        margin-right: 0.1em;
     }
     .box-common {
         padding: 2.7em 0.6em .6em;
@@ -4043,8 +4023,7 @@ textarea::-webkit-scrollbar-track {
         margin: -1em auto 1.7em;
     }
     .sns-share {
-        /* margin: 1.3em auto 1.7em; */
-        margin: 1em auto 2.9em;
+        margin: 0.5em auto 2.3em;
     }
     .pagination {
         margin: 1.79em 0 2.97em;
@@ -4210,7 +4189,7 @@ textarea::-webkit-scrollbar-track {
 }
 
 
-.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
+.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
 
 
 /*480以下　本当にスマホだけで分けたい重要なもの用（乱用禁止）→このあと、タブレットで一回ちゃんと全部確認するか！ってことで数値的に明らかに直した方が良さそうなものだけ768から持ってきたりした。本当はメインのブレークポイントを480にするのが正しいのかもしれないけど、一回768って決めたんだし変えるのめんどいしどうせまた768がいいとか言うかもしんないし。この対応で。*/
@@ -4228,25 +4207,22 @@ textarea::-webkit-scrollbar-track {
     }
     .sns-buttons a, .like-button {
         width: 51.8px !important;
-        height: 49.98px !important;
+        height: 55.98px !important;
     }
     .sns-share-buttons .sns-buttons-wrap:nth-child(1) > a > svg {
-        transform: scale(0.567) !important;
+        transform: scale(0.9) !important;
     }
     .sns-share-buttons .sns-buttons-wrap:nth-child(2) > a > svg {
-        transform: scale(0.5) !important;
+        transform: scale(0.7823) !important;
     }
     .sns-share-buttons .sns-buttons-wrap:nth-child(3) > a > svg {
-        transform: scale(0.53) !important;
+        transform: scale(0.83) !important;
     }
     .sns-share-buttons .sns-buttons-wrap:nth-child(4) > a > svg {
-        transform: scale(0.5) !important;
+        transform: scale(0.7823) !important;
     }
     .heart-wrapper {
         transform: scale(0.77);
-    }
-    .snsbadge {
-        font-size: 0.92em;
     }
     .prof-box-wrap {
         display: block;
@@ -4505,19 +4481,18 @@ textarea::-webkit-scrollbar-track {
 }
 
 
-.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
+.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx{}
 
 
 /* heart */
 .heart-wrapper {
     position: relative;
-    margin-top: -1px;
     cursor: pointer;
 }
 .heart-wrapper .heart {
     position: absolute;
-    margin-left: -18px;
     margin-top: -14px;
+    margin-left: -18px;
     left: 50%;
     display: block;
     width: 36px;
@@ -4613,11 +4588,11 @@ textarea::-webkit-scrollbar-track {
     display: block;
     position: absolute;
     height: 5.333px;
-    width: 5.333px;
+    width: 6px;
     top: 50%;
     left: 50%;
     margin-top: -2.666666px;
-    margin-left: -2.666666px;
+    margin-left: -3px;
     z-index: 2;
     border-radius: 50%;
 }
@@ -4652,32 +4627,32 @@ textarea::-webkit-scrollbar-track {
     margin-left: 0;
   }
   44.44444% {
-    height: 29.375px;
-    width: 29.375px;
+    height: 40px;
+    width: 45px;
     top: 54%;
-    margin-top: -14.6875px;
-    margin-left: -14.6875px;
+    margin-top: -17.5px;
+    margin-left: -22.5px;
   }
   62.96296% {
-    height: 23px;
-    width: 24px;
+    height: 32px;
+    width: 36px;
     top: 54%;
-    margin-top: -11.75px;
-    margin-left: -11.75px;
+    margin-top: -14px;
+    margin-left: -18px;
   }
   81.48148% {
-    height: 23.0675px;
-    width: 24.1075px;
+    height: 32.8px;
+    width: 36.9px;
     top: 54%;
-    margin-top: -12.04375px;
-    margin-left: -12.04375px;
+    margin-top: -14.25px;
+    margin-left: -18.45px;
   }
   100% {
-    height: 23px;
-    width: 24px;
+    height: 32px;
+    width: 36px;
     top: 54%;
-    margin-top: -11.75px;
-    margin-left: -11.75px;
+    margin-top: -14px;
+    margin-left: -18px;
   }
 }
 @keyframes ring {
@@ -4691,65 +4666,69 @@ textarea::-webkit-scrollbar-track {
   3.7037% {
     height: 0;
     width: 0;
-    border-width: 2.35px;
-    margin-top: -2.35px;
-    margin-left: -2.35px;
-    border-color: #e2264d;
+    border-width: 3.4px;
+    margin-top: -3.2px;
+    margin-left: -3.6px;
+    border-color: #E2264D;
   }
   7.40741% {
     height: 0;
     width: 0;
-    border-width: 16.45px;
-    margin-top: -16.45px;
-    margin-left: -16.45px;
+    border-width: 23.8px;
+    margin-top: -22.4px;
+    margin-left: -25.2px;
   }
   11.11111% {
     height: 0;
     width: 0;
-    border-width: 18.8px;
-    margin-top: -18.8px;
-    margin-left: -18.8px;
+    border-width: 27.2px;
+    margin-top: -25.6px;
+    margin-left: -28.8px;
   }
   14.81481% {
     height: 0;
     width: 0;
-    border-width: 19.975px;
-    margin-top: -19.975px;
-    margin-left: -19.975px;
+    border-width: 28.9px;
+    margin-top: -26.2px;
+    margin-left: -29.6px;
   }
   18.51852% {
-    width: 28.2px;
-    height: 28.2px;
-    border-width: 5.875px;
-    border-color: #cc8ef5;
+    width: 43.2px;
+    height: 38.4px;
+    border-width: 8.5px;
+    border-color: #CC8EF5;
+    margin-top: -19.2px;
+    margin-left: -21.6px;
   }
   22.22222% {
-    width: 37.6px;
-    height: 37.6px;
-    border-width: 1.175px;
+    width: 57.6px;
+    height: 51.2px;
+    border-width: 1.7px;
+    margin-top: -25.6px;
+    margin-left: -28.8px;
   }
   25.92593%,
   100% {
-    width: 39.95px;
-    height: 39.95px;
+    width: 61.2px;
+    height: 54.4px;
     border-width: 0;
-    margin-top: -19.975px;
-    margin-left: -19.975px;
+    margin-top: -27.2px;
+    margin-left: -30.6px;
   }
 }
 @keyframes circles {
   0%,
   18.51852% {
-    box-shadow: -12.46276px -12.46276px 0 -1.95833px #8ce8c3, -13.50153px -11.32913px 0 -1.95833px #8be7c2, 1.97337px -17.51418px 0 -1.95833px #90d2fa, 0.4394px -17.61952px 0 -1.95833px #91d1f9, 14.92351px -9.37707px 0 -1.95833px #cc8ef5, 14.04946px -10.64205px 0 -1.95833px #cb8df4, 16.63594px 5.82117px 0 -1.95833px #8ce8c3, 17.07999px 4.3491px 0 -1.95833px #8ce8c3, 5.82117px 16.63594px 0 -1.95833px #f58ea7, 7.24894px 16.06529px 0 -1.95833px #f48da6, -9.37707px 14.92351px 0 -1.95833px #91d2fa, -8.04071px 15.68399px 0 -1.95833px #91d2fa, -17.51418px 1.97337px 0 -1.95833px #92d3fc, -17.27554px 3.49233px 0 -1.95833px #cb8df4;
+    box-shadow: -18.03122px -18.03122px 0 -2.83333px #8ce8c3, -19.53413px -16.39108px 0 -2.83333px #8be7c2, 2.85509px -25.33966px 0 -2.83333px #959ff3, 0.63573px -25.49207px 0 -2.83333px #f582cc, 21.59147px -13.56682px 0 -2.83333px #cc8ef5, 20.32688px -15.39701px 0 -2.83333px #cb8df4, 24.06902px 8.42212px 0 -2.83333px #8ce8c3, 24.71147px 6.29231px 0 -2.83333px #8ce8c3, 8.42212px 24.06902px 0 -2.83333px #f58ea7, 10.48782px 23.2434px 0 -2.83333px #f48da6, -13.56682px 21.59147px 0 -2.83333px #91d2fa, -11.63337px 22.69173px 0 -2.83333px #91d2fa, -25.33966px 2.85509px 0 -2.83333px #92d3fc, -24.9944px 5.05273px 0 -2.83333px #cb8df4;
   }
   22.22222% {
-    box-shadow: -13.29361px -13.29361px 0 -0.78333px #8ce8c3, -15.30174px -12.83968px 0 -0.78333px #8be7c2, 2.10493px -18.68179px 0 -0.78333px #90d2fa, 0.49799px -19.96879px 0 -0.78333px #91d1f9, 15.91841px -10.0022px 0 -0.78333px #cc8ef5, 15.92272px -12.06099px 0 -0.78333px #cb8df4, 17.74501px 6.20925px 0 -0.78333px #8ce8c3, 19.35732px 4.92898px 0 -0.78333px #8ce8c3, 6.20925px 17.74501px 0 -0.78333px #f58ea7, 8.21546px 18.20733px 0 -0.78333px #f48da6, -10.0022px 15.91841px 0 -0.78333px #91d2fa, -9.11281px 17.77519px 0 -0.78333px #91d2fa, -18.68179px 2.10493px 0 -0.78333px #92d3fc, -19.57895px 3.95797px 0 -0.78333px #cb8df4;
+    box-shadow: -19.2333px -19.2333px 0 -1.13333px #8ce8c3, -22.13868px -18.57656px 0 -1.13333px #8be7c2, 3.04543px -27.02897px 0 -1.13333px #959ff3, 0.7205px -28.89102px 0 -1.13333px #f582cc, 23.0309px -14.47127px 0 -1.13333px #cc8ef5, 23.03713px -17.44995px 0 -1.13333px #cb8df4, 25.67363px 8.98359px 0 -1.13333px #8ce8c3, 28.00633px 7.13129px 0 -1.13333px #8ce8c3, 8.98359px 25.67363px 0 -1.13333px #f58ea7, 11.8862px 26.34252px 0 -1.13333px #f48da6, -14.47127px 23.0309px 0 -1.13333px #91d2fa, -13.18449px 25.7173px 0 -1.13333px #91d2fa, -27.02897px 3.04543px 0 -1.13333px #92d3fc, -28.32698px 5.72642px 0 -1.13333px #cb8df4;
   }
   51.85185% {
-    box-shadow: -19.94041px -19.94041px 0 -0.39167px #9b88cb, -19.70876px -12.79902px 0 -1.37083px #ac77d9, 3.1574px -28.02268px 0 -0.39167px #97e3d5, -2.28154px -23.38898px 0 -1.37083px #b0dfe0, 23.87762px -15.0033px 0 -0.39167px #d1dbaa, 16.86373px -16.36657px 0 -1.37083px #d8ce9f, 26.61751px 9.31387px 0 -0.39167px #66cc9e, 23.31026px 2.98021px 0 -1.37083px #70d4a8, 9.31387px 26.61751px 0 -0.39167px #d5a5bf, 12.20369px 20.08283px 0 -1.37083px #ad9be0, -15.0033px 23.87762px 0 -0.39167px #bc7be1, -8.09251px 22.06267px 0 -1.37083px #a38cdb, -28.02268px 3.1574px 0 -0.39167px #b77bdc, -22.29488px 7.42887px 0 -1.37083px #9fcbcc;
+    box-shadow: -28.84996px -28.84996px 0 -0.56667px #9b88cb, -28.5148px -18.51773px 0 -1.98333px #ac77d9, 4.56815px -40.54346px 0 -0.56667px #8ed6cf, -3.30094px -33.83938px 0 -1.98333px #f58bb0, 34.54635px -21.70691px 0 -0.56667px #d1dbaa, 24.39859px -23.67929px 0 -1.98333px #d8ce9f, 38.51044px 13.47539px 0 -0.56667px #66cc9e, 33.72549px 4.31179px 0 -1.98333px #70d4a8, 13.47539px 38.51044px 0 -0.56667px #d5a5bf, 17.65641px 29.056px 0 -1.98333px #ad9be0, -21.70691px 34.54635px 0 -0.56667px #bc7be1, -11.70831px 31.92046px 0 -1.98333px #a38cdb, -40.54346px 4.56815px 0 -0.56667px #b77bdc, -32.25643px 10.74815px 0 -1.98333px #9fcbcc;
   }
   81.48148%,
   100% {
-    box-shadow: -19.94041px -19.94041px 0 -1.95833px #a068ce, -19.70876px -12.79902px 0 -1.95833px #b752e1, 3.1574px -28.02268px 0 -1.95833px #99e9c8, -2.28154px -23.38898px 0 -1.95833px #bae3d7, 23.87762px -15.0033px 0 -1.95833px #d3f491, 16.86373px -16.36657px 0 -1.95833px #dce483, 26.61751px 9.31387px 0 -1.95833px #59c392, 23.31026px 2.98021px 0 -1.95833px #67cd9f, 9.31387px 26.61751px 0 -1.95833px #caadc7, 12.20369px 20.08283px 0 -1.95833px #959ff3, -15.0033px 23.87762px 0 -1.95833px #ca5ed8, -8.09251px 22.06267px 0 -1.95833px #a975d1, -28.02268px 3.1574px 0 -1.95833px #c35dd1, -22.29488px 7.42887px 0 -1.95833px #90e0be;
+    box-shadow: -28.84996px -28.84996px 0 -2.83333px #a068ce, -28.5148px -18.51773px 0 -2.83333px #b752e1, 4.56815px -40.54346px 0 -2.83333px #8ce8c3, -3.30094px -33.83938px 0 -2.83333px #f58ea7, 34.54635px -21.70691px 0 -2.83333px #d3f491, 24.39859px -23.67929px 0 -2.83333px #dce483, 38.51044px 13.47539px 0 -2.83333px #59c392, 33.72549px 4.31179px 0 -2.83333px #67cd9f, 13.47539px 38.51044px 0 -2.83333px #caadc7, 17.65641px 29.056px 0 -2.83333px #959ff3, -21.70691px 34.54635px 0 -2.83333px #ca5ed8, -11.70831px 31.92046px 0 -2.83333px #a975d1, -40.54346px 4.56815px 0 -2.83333px #c35dd1, -32.25643px 10.74815px 0 -2.83333px #90e0be;
   }
 }
