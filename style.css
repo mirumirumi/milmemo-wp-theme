@@ -210,25 +210,9 @@ img {
     flex-direction: column;
     justify-content: center;
 }
-.logo {
-    text-align: center;
-}
 .logo-image span,
 .logo-image a {
-    display: inline-block;
-    max-width: 100%;
-}
-.site-name-text-link {
-    color: #333333;
-    text-decoration: none;
-    font-weight: normal;
-}
-.site-name-text {
-    font-size: 28px;
-}
-.logo-image {
-    padding: 10px 0;
-    font-size: inherit;
+    display: flex;
 }
 .navi {
     background-color: #ffffff;
@@ -1868,13 +1852,16 @@ a:hover {
     opacity: .9;
     z-index: 777;
 }
-.header-for-scroll img {
-    max-height: 39px;
-    padding: 8.88px 0 0;
+.header-for-scroll a {
+    display: flex;
+    align-items: center;
+    padding: 7px 0;
+    text-decoration: none;
 }
-.header-for-scroll img:hover {
-    transform: none;
-    opacity: 1;
+.header-for-scroll svg {
+    display: inline-block;
+    width: 33px;
+    height: 33px;
 }
 .header-for-scroll .header-search-wrap-for-scroll {
     position: relative;
@@ -1921,12 +1908,21 @@ a:hover {
 }
 #header-in {
     position: relative;
+    margin: 1.1em auto 1.5em;
     padding-left: 1.013em;
     padding-right: 1.013em;
 }
-#header-in > .logo-image {
-    width: 30%;
-    margin: 0 auto;
+.logo-image {
+    margin: 0;
+    width: auto;
+}
+.logo-image svg {
+    display: block;
+    width: 55px;
+    height: 55px;
+}
+.logo-image image {
+    aspect-ratio: 1/1;
 }
 .navi-in > ul li:hover > ul {/*Cocoon打ち消し用*/
     display: none;
@@ -3035,15 +3031,6 @@ input[type="submit"]:hover {
     font-weight: bold;
     line-height: 1.25;
 }
-.site-logo-image {
-    aspect-ratio: 400/90;
-    transition: all 0.47s ease-in-out;
-}
-.site-logo-image:hover {
-    opacity: 0.79;
-    transform: translateY(-3.97px);
-    transition: all 0.237s ease-out;
-}
 .twitter-tweet,
 .twitter-tweet-rendered {
     margin: 10px auto 2.5em !important;
@@ -3389,7 +3376,6 @@ div.speech-balloon {
 }
 .header-in {
     flex-direction: row;
-    justify-content: space-between;
 }
 #menu-item-7883 > a {
     pointer-events: none;
@@ -3752,9 +3738,6 @@ textarea::-webkit-scrollbar-track {
         transform: translate(0, 37px);
         transition: all 0.57s ease-in-out;
     }
-    #header-in>.logo-image {
-        width: 50%;
-    }
     .header-search-wrap,
     .header-search-btn {
         display: none;
@@ -3876,6 +3859,10 @@ textarea::-webkit-scrollbar-track {
 
 /*768px以下*/
 @media screen and (max-width: 768px) {
+    .logo-image svg {
+        width: 45px;
+        height: 45px;
+    }
     .navi-footer-in>.menu-footer {
         display: block;
     }
@@ -3890,32 +3877,19 @@ textarea::-webkit-scrollbar-track {
         left: 2.2em;
     }
     .header-for-scroll {
-        padding: 0 1.3%;
+        padding: 0 2% 0 4%;
         height: 37px;
     }
-    .header-for-scroll a {
-        display: inline-block;
-        width: auto;
-        height: 100%;
-    }
-    .header-for-scroll img {
-        display: block;
-        position: relative;
-        top: 50%;
-        transform: translateY(-50%);
-        max-height: 21px;
-        margin: 0;
-        padding: 0;
-    }
-    .header-for-scroll img:hover {
-        transform: translateY(-50%);
+    .header-for-scroll svg {
+        width: 23px;
+        height: 23px;
     }
     .header-for-scroll .header-search-wrap-for-scroll{
         top: 0.4em;
         right: 1.3em;
     }
     .header-for-scroll .header-search-btn-for-scroll{
-        top: 0.3em;
+        top: 0.333em;
     }
     .header-search-btn-for-scroll i {
         font-size: 1.3em;
@@ -4194,10 +4168,6 @@ textarea::-webkit-scrollbar-track {
 
 /*480以下　本当にスマホだけで分けたい重要なもの用（乱用禁止）→このあと、タブレットで一回ちゃんと全部確認するか！ってことで数値的に明らかに直した方が良さそうなものだけ768から持ってきたりした。本当はメインのブレークポイントを480にするのが正しいのかもしれないけど、一回768って決めたんだし変えるのめんどいしどうせまた768がいいとか言うかもしんないし。この対応で。*/
 @media screen and (max-width: 480px) {
-    #header-in > .logo-image {
-        margin: 11px auto 0;
-        width: 67%;
-    }
     .ect-vertical-card .entry-card-wrap {
         width: 87%;
     }

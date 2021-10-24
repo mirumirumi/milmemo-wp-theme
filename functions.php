@@ -13,8 +13,8 @@ require "visual_editor_custom.php";
 //*****エントリーカード系でツールチップが出ないようにする******
 require "no-tooltip.php";
 
-//*********投稿一覧にクイック編集できるフォーム欄を追加する***************
-// require "add_memo_form_at_post_list_quick_edit.php";
+//******ヘッダーロゴにSVGを使用するので出力関数を上書きする必要がある***********
+require "generate_the_site_logo_tag.php";
 
 //*****ビジュアルエディタに切り替えで、空のspanタグやiタグが消されるのを防止*****
 function delete_stop($init) {
