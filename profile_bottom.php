@@ -13,7 +13,7 @@ function echo_profbox_html_bottom($category_text) {
         </div>
         <div class="pb-right">
             <div class="pb-titles">
-                <span class="pb-title-mirumi">みるみ</span>
+                <span class="pb-title-mirumi">みるみ<span class="pb-title-author">みるめも筆者</span></span>
             </div>
             <div class="pb-contents">
     <?php

@@ -1908,7 +1908,7 @@ a:hover {
 }
 #header-in {
     position: relative;
-    margin: 1.1em auto 1.5em;
+    margin: 1.3em auto 1.1em;
     padding-left: 1.013em;
     padding-right: 1.013em;
 }
@@ -3111,11 +3111,14 @@ input[type="submit"]:hover {
     margin-bottom: 0.7em;
 }
 .pb-title-mirumi {
-    font-size: 1.1em;
+    font-size: 1.03em;
     font-weight: bold;
 }
-.pb-top .pb-title-mirumi {
-    font-size: 0.97em;
+.pb-title-author {
+    margin-left: 1.1em;
+    color: #929292;
+    font-size: 0.8em;
+    font-weight: normal;
 }
 .pb-contents p {
     margin: 0 0 0.5em;
@@ -3761,10 +3764,10 @@ textarea::-webkit-scrollbar-track {
         transform: translateX(-50%);
     }
     .menu-mobile .header-sumaho-menu-1 ul {
-        transform: translateX(-73%);
+        transform: translateX(-75%);
     }
     .menu-mobile .header-sumaho-menu-2 ul {
-        transform: translateX(-27%);
+        transform: translateX(-25%);
     }
     #navi .menu-mobile .header-category ul li,
     #navi .menu-mobile .header-sumaho-menu-1 ul li,
@@ -3791,9 +3794,12 @@ textarea::-webkit-scrollbar-track {
         flex-wrap: nowrap;
     }
     ul.menu-mobile > li {
-        padding-right: 2.37em;
-        padding-left: 2.37em;
+        padding-right: 2em;
+        padding-left: 2em;
         white-space: nowrap;
+    }
+    ul.menu-mobile > li:last-child {
+        padding-left: 1.3em;
     }
     ul.menu-mobile > li > a > .caption-wrap > .item-label {
         white-space: nowrap;
@@ -4203,9 +4209,6 @@ textarea::-webkit-scrollbar-track {
         display: none;
         padding: 0.7em;
     }
-    .pb-top .pb-titles {
-        margin: 0 0 0.7em;
-    }
     .pb-top .pb-contents p {
         font-size: 0.79em;
     }
@@ -4221,8 +4224,12 @@ textarea::-webkit-scrollbar-track {
         padding-left: 0;
     }
     .pb-titles {
-        margin: 1.1em 0 0.5em;
+        margin: 1.1em 0 0.7em;
         text-align: center;
+    }
+    .pb-title-author {
+        display: block;
+        margin-left: 0;
     }
     .pb-contents p {
         font-size: 0.85em;
