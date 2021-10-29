@@ -399,4 +399,10 @@ function change_like_count($table, $record, $type) {
     return $res;
 }
 
+//*********dropbox側の要因？なのかBackWPupでタイムアウトするのを防止**************
+function __extend_http_request_timeout( $timeout ) {
+    return 60;
+}
+add_filter( 'http_request_timeout', '__extend_http_request_timeout' );
+
 
