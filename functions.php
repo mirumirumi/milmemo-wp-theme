@@ -16,6 +16,9 @@ require "no-tooltip.php";
 //******ヘッダーロゴにSVGを使用するので出力関数を上書きする必要がある***********
 require "generate_the_site_logo_tag.php";
 
+//*****ブログカードで /pc-freesoft のようなパス表記に対応させる******
+require "blogcard-root.php";
+
 //*****ビジュアルエディタに切り替えで、空のspanタグやiタグが消されるのを防止*****
 function delete_stop($init) {
     $init['verify_html'] = false; // 空タグや属性なしのタグを消させない
@@ -32,7 +35,7 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 
 //***************管理画面にもファビコンを表示********************************
 function admin_favicon() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="https://milmemo.net/wp-content/uploads/favicon.ico" />';
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/wp-content/uploads/favicon.ico" />';
 }
 add_action('admin_head', 'admin_favicon');
 
@@ -166,7 +169,7 @@ add_filter('is_adsense_disp','adsense_disp_control');
 function affi_ab_test() {
     //5869ジェムテク、10177ジャストアンサー、1458買ってよかったもの、16931仮想通貨
     if (is_single(array(5869,10177,1458,16931))) {
-        echo '<script defer src="https://milmemo.net/wp-content/themes/cocoon-child-master/affi-test.js"></script>';
+        echo '<script defer src="/wp-content/themes/cocoon-child-master/affi-test.js"></script>';
     }
 }
 add_action('wp_footer_insert_open','affi_ab_test');
@@ -174,8 +177,8 @@ add_action('wp_footer_insert_open','affi_ab_test');
 //*********ソースコード表示がある記事にだけhighlight.jsと関連CSSを出力*******
 function syntax_highlight($hljs) {
     if (is_single(array(2299,2575,4594,4625,6785,8532,8778,9447,9678,9927,11043,12304,12407,12970,13030,13557,14048,15439,16830,18066,18290,18332,18504,18579,18787))) {
-        $js = "<script src='https://milmemo.net/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js?ver=5.4.4&#038;fver=20200723123944'></script><script>(function($)"."{"."$('.entry-content pre').each(function(i,block){hljs.highlightBlock(block)})})(jQuery);</script>";
-        $css = '<link rel="stylesheet" href="https://milmemo.net/wp-content/themes/cocoon-child-master/hljs.css">';
+        $js = "<script src='/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js?ver=5.4.4&#038;fver=20200723123944'></script><script>(function($)"."{"."$('.entry-content pre').each(function(i,block){hljs.highlightBlock(block)})})(jQuery);</script>";
+        $css = '<link rel="stylesheet" href="/wp-content/themes/cocoon-child-master/hljs.css">';
         return $js.$css;
     }
 }
@@ -209,13 +212,6 @@ function get_twitter_share_url() {
 
 //**********************特殊文字列の自動置換を停止********************
 add_filter('run_wptexturize', '__return_false');
-
-//**************コメント送信後にサンクスページを表示する********************
-function disp_thx_msg(){
-    wp_redirect('https://milmemo.net/comment-thx');
-    exit();
-}
-add_action('wp_insert_comment','disp_thx_msg');
 
 //**************フロントページのタイトルタグをh1に********************
 function custom_the_site_logo_tag($tag) {
@@ -269,7 +265,7 @@ function add_accesscount($tag) {
     $post_id = get_the_ID();
     $post_type = get_accesses_post_type();
     $tag = <<<EOD
-    <style>body::after{content:url("https://milmemo.net/wp-content/themes/cocoon-master/lib/analytics/access.php?post_id=$post_id&post_type=$post_type");visibility:hidden;position:absolute;bottom:0;right:0;width:1px;height:1px;overflow:hidden;display:inline!important;}</style>
+    <style>body::after{content:url("/wp-content/themes/cocoon-master/lib/analytics/access.php?post_id=$post_id&post_type=$post_type");visibility:hidden;position:absolute;bottom:0;right:0;width:1px;height:1px;overflow:hidden;display:inline!important;}</style>
     EOD;
     return $tag;
 }
@@ -286,7 +282,7 @@ add_action('pre_ping', 'stop_selfpingback');
 //*********特定の親カテゴリからaタグを抜く***************
 function remove_a_tag($nav_menu) {
     if (strpos($nav_menu, "%e3%82%b0%e3%83%ad%e3%83%bc%e3%83%90%e3%83%ab%e3%83%8a%e3%83%93%ef%bc%88new%ef%bc%89-pc") !== false) {
-        $nav_menu = preg_replace('/(.*)https:\/\/milmemo.net\/category\/(details|others)(\".*)/im', "$1#\" class=\"a-disabled$3", $nav_menu);
+        $nav_menu = preg_replace('/(.*)https:\/\/.*?\/category\/(details|others)(\".*)/im', "$1#\" class=\"a-disabled$3", $nav_menu);
         return $nav_menu;
     } else {
         return $nav_menu;
@@ -296,7 +292,7 @@ add_filter('wp_nav_menu', 'remove_a_tag');
 
 //*********Software Designのタグページはnoindexじゃなくする***************
 function remove_noindex_softwaredesign($is_noindex) {
-    if ("https://milmemo.net".$_SERVER['REQUEST_URI'] === get_tag_link(1734)) {
+    if (strpos(get_tag_link(1734), $_SERVER['REQUEST_URI']) !== false) {
         return 0;
     } else {
         return $is_noindex;
@@ -311,20 +307,13 @@ function add_lazy_load($content) {
 }
 add_filter('the_content', 'add_lazy_load');
 
-//*********ログインしている人にだけadmin用のassetを出力する***************
+//****ログインしている人にだけadmin用のassetを出力する(js系はなんかダメだったのでcssだけ)*****
 function echo_admin_css() {
     if (is_user_logged_in()) {
-        echo '<link rel="stylesheet" href="https://milmemo.net/wp-content/themes/cocoon-child-master/admin-style.css">';
+        echo '<link rel="stylesheet" href="/wp-content/themes/cocoon-child-master/admin-style.css">';
     }
 }
 add_filter('wp_head', 'echo_admin_css');
-// function echo_admin_js() {
-//     if (is_user_logged_in()) {
-//         echo '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>';
-//         echo '<script src="https://milmemo.net/wp-content/themes/cocoon-child-master/admin-script.js"></script>';
-//     }
-// }
-// add_action('admin_enqueue_scripts','echo_admin_js');
 
 //*********商品リンクの画像にもLazy Loadを適用する***************
 function apply_lazy_load_product_item_link($tag) {

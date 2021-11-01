@@ -4,7 +4,7 @@ function echo_profbox_html($category_text) {
     ?>
     <div class="prof-box-wrap pb-top">
         <div class="pb-left">
-            <img loading="lazy" src="https://milmemo.net/wp-content/uploads/mirumi.png" alt="みるみ" width="312" height="312">
+            <img loading="lazy" src="/wp-content/uploads/mirumi.png" alt="みるみ" width="312" height="312">
             <div class="pb-follow-me">Follow Me!</div>
             <div class="pb-follow-btns">
                 <a class="pb-follow-btn pb-tw-btn" href="https://twitter.com/milmemo_net" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -55,7 +55,7 @@ EOT;
     case 1214: //技術職
         $category_text = <<<EOT
         <p>大手電機メーカーでエンジニアやってます。</p>
-        <p><a href="https://milmemo.net/engineer-blog-start">こういう背景</a>があり、このブログでは技術職の魅力を多くの人に知ってもらうべくリアルな情報を色々書いています。</p>
+        <p><a href="/engineer-blog-start">こういう背景</a>があり、このブログでは技術職の魅力を多くの人に知ってもらうべくリアルな情報を色々書いています。</p>
 EOT;
         echo_profbox_html($category_text);
         break;

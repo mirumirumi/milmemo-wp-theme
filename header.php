@@ -16,9 +16,9 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
 
 <!-- <link rel="preconnect dns-prefetch" href="//fonts.googleapis.com"> -->
 <!-- <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet"> -->
-<link rel="preload" as="font" type="font/woff2" href="https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff2" crossorigin>
-<?php //prefetchとpreloadの違いは、前者が必ずしも先読みされるわけではなく、低い優先度で先読みされるのに対し、後者は強制的、高い優先度で先読みされる  ?>
+<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff2" crossorigin>
+<?php //prefetchとpreloadの違いは、前者が必ずしも先読みされるわけではなく低い優先度で先読みされるのに対し、後者は強制的、高い優先度で先読みされる  ?>
 
 <?php //ヘッドタグ内挿入用のアクセス解析用テンプレート
 get_template_part('tmp/head-analytics'); ?>
@@ -99,7 +99,7 @@ get_template_part('tmp/head-javascript'); ?>
 <?php //ヘッドタグ内挿入用のユーザー用テンプレート
 /* get_template_part('tmp-user/head-insert'); */ ?>
 
-<!-- Clarity tracking code for https://milmemo.net/ -->
+<!-- Clarity tracking code -->
 <script>
     (function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

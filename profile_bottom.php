@@ -4,7 +4,7 @@ function echo_profbox_html_bottom($category_text) {
     ?>
     <div class="prof-box-wrap">
         <div class="pb-left">
-            <img loading="lazy" src="https://milmemo.net/wp-content/uploads/mirumi.png" alt="みるみ" width="312" height="312">
+            <img loading="lazy" src="/wp-content/uploads/mirumi.png" alt="みるみ" width="312" height="312">
             <div class="pb-follow-me">Follow Me!</div>
             <div class="pb-follow-btns">
                 <a class="pb-follow-btn pb-tw-btn" href="https://twitter.com/milmemo_net" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -19,7 +19,7 @@ function echo_profbox_html_bottom($category_text) {
     <?php
 echo $category_text;
     ?>
-                <p>詳しいプロフィールは<a href="https://milmemo.net/profile">このページ</a>で色々書いてます。<a href="https://twitter.com/milmemo_net" class="twitter-link" target="_blank">Twitter</a>もやってます。</p>
+                <p>詳しいプロフィールは<a href="/profile">このページ</a>で色々書いてます。<a href="https://twitter.com/milmemo_net" class="twitter-link" target="_blank">Twitter</a>もやってます。</p>
             </div>
         </div>
     </div>

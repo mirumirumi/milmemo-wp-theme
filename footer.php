@@ -103,11 +103,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
   <?php //自作自動広告挿入スクリプト
   $is_disp = apply_filters('is_adsense_disp', $is_disp);
   if ((is_single()) && ($is_disp == true)) { ?>
-    <script defer src="https://milmemo.net/wp-content/themes/cocoon-child-master/autoInsertAdsense.js"></script>
+    <script defer src="/wp-content/themes/cocoon-child-master/autoInsertAdsense.js"></script>
   <?php } ?>
 
   <?php //javascript.jsにAdSenseテスト書いても文字列で出ちゃう ?>
-  <script defer src="https://milmemo.net/wp-content/themes/cocoon-child-master/ab-test.js"></script>
+  <script defer src="/wp-content/themes/cocoon-child-master/ab-test.js"></script>
 
   <?php //highlight.js用のフック
   echo apply_filters('footer_hljs', $konohensuuhananndemoii); ?>
@@ -139,6 +139,11 @@ if ( !defined( 'ABSPATH' ) ) exit; ?>
     get_template_part('tmp-user/footer-insert');
   }
   */ ?>
+
+  <?php //コメントサンクスアラート ?>
+  <div class="notify-bar success">
+    <span>コメントが正常に送信されました。承認されるまで表示されませんので二重投稿なさらないようご注意ください。</span>
+  </div>
 
 </body>
 

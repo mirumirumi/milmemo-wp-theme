@@ -73,8 +73,9 @@ EOT;
           <div class="circles"></div>
         </div>
       </button>
-      <?php if(get_record("like_count", preg_replace('/https:\/\/milmemo\.net\//im', '', get_permalink())) != null) { ?>
-          <span class="snsbadge"><?php echo get_record("like_count", preg_replace('/https:\/\/milmemo\.net\//im', '', get_permalink())); ?></span>
+      <?php $like_count = get_record("like_count", preg_replace('/https:\/\/.*?\//im', '', get_permalink()));
+      if($like_count != null) { ?>
+          <span class="snsbadge"><?php echo $like_count; ?></span>
       <?php } else {?>
           <span class="snsbadge"><?php echo "0"; ?></span>
       <?php }?>

@@ -1770,8 +1770,8 @@ pre {
     font-display: swap;
     src: local("NotoSansCJKjp-Bold.otf"),
          local("NotoSansJP-Bold.otf"),
-         url("https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff2") format("woff2"),
-         url("https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff") format("woff");
+         url("webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff2") format("woff2"),
+         url("webfonts/Noto_Sans_JP/NotoSansJP-Regular.woff") format("woff");
 }
 @font-face {
     font-family: "Noto Sans milmemo";
@@ -1780,8 +1780,8 @@ pre {
     font-display: swap;
     src: local("NotoSansCJKjp-Bold.otf"),
          local("NotoSansJP-Bold.otf"),
-         url("https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff2") format("woff2"),
-         url("https://milmemo.net/wp-content/themes/cocoon-child-master/webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff") format("woff");
+         url("webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff2") format("woff2"),
+         url("webfonts/Noto_Sans_JP/NotoSansJP-Bold.woff") format("woff");
 }
 body {
     color: #4e4e4e;
@@ -3694,7 +3694,28 @@ textarea::-webkit-scrollbar-track {
     margin-left: 0.5em;
     color: #ba8383;
 }
-
+.notify-bar {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 0.3em 1.3em 0.4em;
+    width: 95%;
+    max-width: 777px;
+    font-size: 0.888em;
+    border: solid 2.3px transparent;
+    border-radius: 5px;
+    opacity: 0;
+    z-index: 9;
+    transition: 0.333s all ease-out;
+}
+.success {
+    color: #2a6737;
+    background-color: #daeddf;
+    border-color: #c6decb;
+}
 
 
 
