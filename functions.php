@@ -19,6 +19,9 @@ require "generate_the_site_logo_tag.php";
 //*****ブログカードで /pc-freesoft のようなパス表記に対応させる******
 require "blogcard-root.php";
 
+//*****SNSカウントを milmemo.net と合算させたりその他上書き集******
+require "sns-count-overrides.php";
+
 //*****ビジュアルエディタに切り替えで、空のspanタグやiタグが消されるのを防止*****
 function delete_stop($init) {
     $init['verify_html'] = false; // 空タグや属性なしのタグを消させない
@@ -35,7 +38,7 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 
 //***************管理画面にもファビコンを表示********************************
 function admin_favicon() {
-    echo '<link rel="shortcut icon" type="image/x-icon" href="/wp-content/uploads/favicon.ico" />';
+    echo '<link rel="shortcut icon" type="image/x-icon" href="/wp-content/uploads/favicon.png" />';
 }
 add_action('admin_head', 'admin_favicon');
 
@@ -131,7 +134,7 @@ add_action('init', 'remove_thumbnail_size');
 //*******5.3から勝手に2560を「-scaled」と作りやがるので停止***********
 add_filter('big_image_size_threshold', '__return_zero', 10, 2);
 
-//**************いつも今日の年月を記事内に挿入する********************************
+//**************いつも今日の年月を記事内に挿入する*****************************
 function shortcode_today() {
     return date_i18n("Y年n月");
 }
@@ -176,39 +179,13 @@ add_action('wp_footer_insert_open','affi_ab_test');
 
 //*********ソースコード表示がある記事にだけhighlight.jsと関連CSSを出力*******
 function syntax_highlight($hljs) {
-    if (is_single(array(2299,2575,4594,4625,6785,8532,8778,9447,9678,9927,11043,12304,12407,12970,13030,13557,14048,15439,16830,18066,18290,18332,18504,18579,18787))) {
+    if (is_single(array(2299,2575,4594,4625,6785,8532,8778,9447,9678,9927,11043,12304,12407,12970,13030,13557,14048,15439,16830,18066,18290,18332,18504,18579,18787,19013))) {
         $js = "<script src='/wp-content/themes/cocoon-master/plugins/highlight-js/highlight.min.js?ver=5.4.4&#038;fver=20200723123944'></script><script>(function($)"."{"."$('.entry-content pre').each(function(i,block){hljs.highlightBlock(block)})})(jQuery);</script>";
         $css = '<link rel="stylesheet" href="/wp-content/themes/cocoon-child-master/hljs.css">';
         return $js.$css;
     }
 }
 add_filter('footer_hljs','syntax_highlight');
-
-//*****************count.jsoonからTwitterのツイート数＋いいね数を取得*************
-function fetch_twitter_count_raw($url) {
-    $url = rawurlencode($url);
-    $args = array('sslverify' => true);
-    $subscribers = wp_remote_get("https://jsoon.digitiminimi.com/twitter/count.json?url=$url", $args);
-    $res = '0';
-    if (!is_wp_error( $subscribers ) && $subscribers["response"]["code"] === 200) {
-      $body = $subscribers['body'];
-      $json = json_decode($body);
-      $res = ($json->{"count"} ? $json->{"count"} + $json->{"likes"} + 1 : '0');
-    }
-    return intval($res);
-}
-
-//**********************TwitterのシェアURL出力部分をちょい変更********************
-function get_twitter_share_url() {
-    $hash_tag = null;
-    if (get_twitter_hash_tag()) {
-      $hash_tag = '+'.urlencode( get_twitter_hash_tag() );
-    }
-    return 'https://twitter.com/intent/tweet?text='.urlencode(get_share_page_title()).' - みるめも'.' @milmemo_net&amp;url='.
-    urlencode( get_share_page_url() ).$hash_tag.
-    get_twitter_via_param(). //ツイートにメンションを含める
-    get_twitter_related_param();//ツイート後にフォローを促す
-}
 
 //**********************特殊文字列の自動置換を停止********************
 add_filter('run_wptexturize', '__return_false');
@@ -250,7 +227,7 @@ function wp_enqueue_web_font_lazy_load_js() {
     }
 }
 
-//*********WordPressのsrcを無効化（サムネwebp対応の件で設定。よく考えたら他のところで役に立ってる気もしないし）***************
+//***WordPressのsrcを無効化（サムネwebp対応の件で設定。よく考えたら他のところで役に立ってる気もしないし）*****
 add_filter('wp_calculate_image_srcset_meta', '__return_null');
 
 //*********webpをWordPressでアップロードできるようにする***************
@@ -307,7 +284,7 @@ function add_lazy_load($content) {
 }
 add_filter('the_content', 'add_lazy_load');
 
-//****ログインしている人にだけadmin用のassetを出力する(js系はなんかダメだったのでcssだけ)*****
+//*********ログインしている人にだけadmin用のassetを出力する**********
 function echo_admin_css() {
     if (is_user_logged_in()) {
         echo '<link rel="stylesheet" href="/wp-content/themes/cocoon-child-master/admin-style.css">';
@@ -392,6 +369,15 @@ function change_like_count($table, $record, $type) {
 function __extend_http_request_timeout( $timeout ) {
     return 60;
 }
-add_filter( 'http_request_timeout', '__extend_http_request_timeout' );
+add_filter('http_request_timeout', '__extend_http_request_timeout');
+
+//***********トップページの新着記事一覧からSoftware Designを除外する*********
+function exclude_software_design($args) {
+    $args += array(
+        'tag__not_in' => array(1734)
+    );
+    return $args;
+}
+add_filter('widget_entries_args', 'exclude_software_design');
 
 
