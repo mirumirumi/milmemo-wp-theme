@@ -2,7 +2,7 @@
 /*!
 Theme Name: Cocoon Child
 Template:   cocoon-master
-Version:    1.1.0
+Version:    1.1.3
 */
 .entry-card,
 .related-entry-card {
@@ -1841,12 +1841,13 @@ a:hover {
     display: none;
 }
 .header-for-scroll {
-    display: none;
     position: fixed;
+    top: 0;
+    display: none;
     justify-content: space-between;
+    align-items: center;
     padding: 0 5%;
     width: 100%;
-    top: 0;
     background-color: #fffbf8;
     box-shadow: 0 3px 5px 0 rgba(0,0,0,.05);
     opacity: .9;
@@ -1865,12 +1866,11 @@ a:hover {
 }
 .header-for-scroll .header-search-wrap-for-scroll {
     position: relative;
-    top: 0.5em;
     right: 0.7em;
 }
 .header-for-scroll .header-search-btn-for-scroll {
     position: relative;
-    top: 0.5em;
+    top: 0.2em;
     right: 0.7em;
     cursor: pointer;
 }
@@ -1879,11 +1879,8 @@ a:hover {
     color: #d3cac1;
 }
 #header-search-for-scroll {
-    position: absolute;
     margin: 0;
     padding: 0;
-    top: -0.25em;
-    right: -0.6em;
     width: 40px;
     opacity: 0;
 }
@@ -2142,9 +2139,6 @@ a:hover {
     font-family: "Font Awesome 5 Free";
     content: "\f01e";
     padding-right: 0.9px;
-}
-.cat-label {
-    display: none;
 }
 .article-header .entry-title,
 .archive-title {
@@ -2829,11 +2823,39 @@ blockquote {
 blockquote strong {
     color: #5f5f5f;
 }
-.search-edit, input[type=text], textarea, select {
-    padding: 11px 17px;
-    font-size: 0.9em;
-    border-radius: 15px;
+input,
+textarea {
+    transition: 0.23s border ease-out, 0.23s box-shadow ease-out;
+}
+input:focus-visible,
+textarea:focus-visible {
+    outline: 0;
+    border: 1.9px solid #caaa88 !important;
+    box-shadow: 0 0 0px 3px #ecdcca;
+}
+textarea, select, .search-edit, input[type=text], input[type=email] {
+    padding: 11px 23px;
+    font-size: 0.8em;
+    color: #4e4e4e;
+    border: 1.9px solid #e5e5e5;
+    border-radius: 9px;
     background-color: #fffefc;
+}
+textarea {
+    border-radius: 9px 9px 0 9px;
+}
+.search-edit {
+    border-radius: 31px !important;
+}
+.search-edit::placeholder {
+    color: #aaaaaa;
+}
+.search-submit {
+    right: 13px;
+    top: calc(50% - 10.3px);
+}
+.header-for-scroll .search-edit {
+    padding: 5px 23px;
 }
 aside.comment-form {
     margin: 5em 0 3em;
@@ -2843,22 +2865,10 @@ aside.comment-form {
     font-size: 1.1em;
     border-radius: 7px;
 }
-.comment-reply-link:hover {
-    background-color: #f4eeea;
-}
-#comment {
-    border-radius: 15px 15px 28px 15px;
-}
 .comment-notes {
     margin: 1.3em 0;
     font-size: 0.7em;
     line-height: 1.5;
-}
-input.search-edit {
-    padding: 8px 17px !important;
-}
-.search-submit {
-    line-height: 1.89em;
 }
 .form-submit {
     position: relative;
@@ -2888,24 +2898,6 @@ input[type="submit"] {
 }
 input[type="submit"]:hover {
     background-color: #f8efe6;
-}
-.sidebar h3 {
-    color: #653905;
-    position: relative;
-    margin-bottom: 1.5em;
-    padding: 0 0.5em;
-    border-bottom: 2px solid #edecea;
-    background: none;
-    font-size: 1.03em;
-}
-.sidebar h3::after {
-    display: block;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 30%;
-    border-bottom: 2px solid #d6d3ce;
-    content: " ";
 }
 .toc {
     margin: 3em auto 1em;
@@ -2983,8 +2975,6 @@ input[type="submit"]:hover {
 }
 .article h2, .article h3, .article h4, .article h5, .article h6 {
     margin: 2.6em 0 1.3em;
-}
-.article h1 {
     line-height: 1.25;
     font-weight: bold;
 }
@@ -2995,7 +2985,6 @@ input[type="submit"]:hover {
     border-top: solid 2.71px #660000;
     border-bottom: solid 2.71px #660000;
     background: none;
-    line-height: 1.25;
 }
 .article h3 {
     padding: 0.4em 0.5em 0.6em 1em;
@@ -3004,8 +2993,6 @@ input[type="submit"]:hover {
     border-left: 5px solid #c4aca0;
     border-bottom: 2.3px solid #dccfc9;
     font-size: 1.27em;
-    font-weight: bold;
-    line-height: 1.25;
 }
 .article h4 {
     padding: 0.299em 0.5em 0.379em 0.9em;
@@ -3013,23 +3000,17 @@ input[type="submit"]:hover {
     border: none;
     border-left: solid 5.3px #c4aca0;
     font-size: 1.14em;
-    font-weight: bold;
-    line-height: 1.25;
 }
 .article h5 {
     margin-bottom: -0.9em;
     color: #770000;
     border-bottom: initial;
     font-size: 1.09em;
-    font-weight: bold;
-    line-height: 1.25;
 }
 .article h6 {
     color: #880000;
     border: none;
     font-size: 1.07em;
-    font-weight: bold;
-    line-height: 1.25;
 }
 .twitter-tweet,
 .twitter-tweet-rendered {
@@ -3517,23 +3498,6 @@ main .search-box {
     margin: 2em 13.5% 0.3em;
     text-align: center;
 }
-main .search-submit {
-    right: 0.5em;
-    top: 1.3px;
-}
-.toc-widget-box .toc {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    border: none !important;
-    font-size: 0.7em;
-}
-.toc-widget-box .toc-content {
-    border: none;
-}
-.toc-widget-box .toc-list {
-    margin: 0;
-}
 /* 表再デザインのときにいじる */
 table tr:nth-of-type(2n + 1) {
     background: none;
@@ -3542,35 +3506,6 @@ table tr:nth-of-type(2n + 1) {
 .post-update .fa-history {
     display: none;
 }
-.mbo p {
-    margin: 0 0 0.7em;
-    padding: 0;
-}
-.mbo ul,
-.mbo ol {
-    margin: 0.75em 0;
-    padding: 0 0.1em 0 1.5em;
-}
-.mbo p:last-child,
-.mbo ul:last-child,
-.mbo ol:last-child {
-    margin: 0;
-}
-.mbo li {
-    margin: 5px 0;
-    padding: 0;
-}
-.mbo {
-    margin: 2.3em 0;
-    color: #666666;
-    font-size: 0.95em;
-    border: solid 2.7px #f1f1f1;
-    border-radius: 11px;
-}
-.mte {
-    padding: 0.7em 1.5em 0.6em;
-    border-radius: 11px;
-}
 *:focus {
     outline: none;
 }
@@ -3578,10 +3513,6 @@ input.search-edit {
     font-size: 14px;
     border-radius: 31px;
     transition: 0.19s all ease-in-out;
-}
-#comment:focus, .search-edit:focus, #author:focus, #email:focus {
-    border: solid 1.3px #835d2f;
-    box-shadow: 1px 1px 3px 1px rgba(0,0,0,.19);
 }
 .navi-footer-in>.menu-footer li,
 .navi-footer-in>.menu-footer li:last-child {
@@ -3912,11 +3843,10 @@ textarea::-webkit-scrollbar-track {
         height: 23px;
     }
     .header-for-scroll .header-search-wrap-for-scroll{
-        top: 0.4em;
         right: 1.3em;
     }
     .header-for-scroll .header-search-btn-for-scroll{
-        top: 0.333em;
+        top: 0.1em;
     }
     .header-search-btn-for-scroll i {
         font-size: 1.3em;
